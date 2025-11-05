@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For Webkit browsers like Chrome, Safari */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-track-slate-900::-webkit-scrollbar-track {
+  background: var(--tw-scrollbar-track);
+}
+.scrollbar-thumb-slate-700::-webkit-scrollbar-thumb {
+  background-color: var(--tw-scrollbar-thumb);
+  border-radius: 4px;
+  border: 2px solid var(--tw-scrollbar-track);
+}
+body {
+  background-color: #2d3748; /* Fallback color */
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='rgba(255, 255, 255, 0.05)' font-family='sans-serif' text-anchor='middle' dominant-baseline='middle' transform='rotate(-45, 75, 75)'%3Ejaskamal%3C/text%3E%3C/svg%3E"),
+    url("https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=2535&auto=format&fit=crop");
+  background-size: 150px 150px, cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  overflow: hidden; /* Prevent scrollbars when dragging window */
+  min-height: 100vh;
+}
+#root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+.rain-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+.drop {
+  position: absolute;
+  bottom: 100%;
+  width: 2px;
+  height: 120px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 75%, rgba(255, 255, 255, 0.3) 100%);
+  animation: drop-fall ease-in infinite;
+  border-radius: 2px;
+  filter: blur(0.5px);
+  opacity: 0;
+}
+
+@keyframes drop-fall {
+  0% {
+    transform: translateY(0vh);
+    opacity: 0;
+  }
+  5% {
+      opacity: 1;
+  }
+  95% {
+      opacity: 1;
+  }
+  to {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Gemini AI Chatbot",
+  "description": "A sleek, serverless AI chatbot powered by Google Gemini. Supports text and image uploads with a modern, translucent interface inspired by Windows 11.",
+  "requestFramePermissions": []
+}
